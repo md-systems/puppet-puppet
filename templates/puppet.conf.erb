@@ -1,0 +1,21 @@
+[main]
+    logdir=/var/log/puppet
+    vardir=/var/lib/puppet
+    ssldir=/var/lib/puppet/ssl
+    rundir=/var/run/puppet
+    factpath=$vardir/lib/facter
+    templatedir=$confdir/templates
+
+[master]
+    certname = <%= @puppetserver %>
+    ausign = true
+    parser = future
+    storeconfigs_backend = puppetdb
+    storeconfigs = true
+    <% if @manifestdir -%>manifestdir = <%= @manifestdir %><% end %>
+    <% if @modulepath -%>modulepath = <%= @modulepath %><% end %>
+
+[agent]
+    pluginsync = true
+    report = true
+    server = <%= @puppetserver %>

@@ -1,0 +1,13 @@
+# Defaults for puppetmaster - sourced by /etc/init.d/puppetmaster
+#
+# NOTE This file is manage by puppet
+# ALL manual changes will be overwritten
+
+# Enable puppetmaster service
+START=yes
+
+# Startup options
+DAEMON_OPTS=""
+
+# Listen on port 8140
+PORT=8140

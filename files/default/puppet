@@ -1,0 +1,10 @@
+# Defaults for puppet - sourced by /etc/init.d/puppet
+#
+# NOTE This file is manage by puppet
+# ALL manual changes will be overwritten
+
+# Enable puppet agent
+START=yes
+
+# Startup options
+DAEMON_OPTS=""
