@@ -34,17 +34,8 @@ class puppet::master {
   class {'puppet::master::service': }
   class {'puppetdb': }
   class {'puppetdb::master::config': }
-  class {'redis': }
-  package {'hiera-redis':
-    provider => 'gem',
-  }
-  package {'redis':
-    provider => 'gem',
-  }
 
   Class['puppet::master::install']->Class['puppet::master::config']
   Class['puppet::master::install']->Class['puppet::master::service']
   Class['puppet::master::config']~>Class['puppet::master::service']
-  Class['redis']->Package['redis']->Package['hiera-redis']
-  Package['hiera-redis']~>Class['puppet::master::service']
 }

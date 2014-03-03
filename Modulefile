@@ -8,5 +8,4 @@ project_page 'https://github.com/md-systems/puppet-puppet'
 
 dependency 'puppetlabs/inifile', '~> 1.0.0'
 dependency 'puppetlabs/puppetdb', '~> 1.5.0'
-dependency 'fsalum/redis', '~> 0.0.6'
 
